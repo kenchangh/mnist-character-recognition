@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: © 2026 guanhao3797
+# SPDX-FileCopyrightText: © 2026 kenchangh
 # SPDX-License-Identifier: Apache-2.0
 """Cocotb tests for the MNIST classifier.
 

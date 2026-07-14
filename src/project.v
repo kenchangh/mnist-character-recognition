@@ -1,5 +1,5 @@
 /*
- * tt_um_guanhao3797_mnist — self-contained MNIST digit recognition.
+ * tt_um_kenchangh_mnist — self-contained MNIST digit recognition.
  *
  * 8x8 binarized image is shifted in serially (64 bits, pixel 0 first),
  * then classified by a ternary-weight network whose weights are Verilog
@@ -27,13 +27,13 @@
  *   uio_out[4]   DONE
  *   uio_out[5]   BUSY (computing)
  *
- * Copyright (c) 2026 guanhao3797
+ * Copyright (c) 2026 kenchangh
  * SPDX-License-Identifier: Apache-2.0
  */
 
 `default_nettype none
 
-module tt_um_guanhao3797_mnist #(
+module tt_um_kenchangh_mnist #(
     parameter MLP    = 1,  // 0: linear 64->10, 1: MLP 64->HIDDEN->10
     parameter HIDDEN = 32  // hidden units (16 or 32), used when MLP = 1
 ) (

@@ -1,6 +1,6 @@
 """MicroPython demo for the Tiny Tapeout demo board (RP2040).
 
-Sends an 8x8 binarized MNIST image to tt_um_guanhao3797_mnist over the
+Sends an 8x8 binarized MNIST image to tt_um_kenchangh_mnist over the
 serial pixel protocol and reads back the predicted digit. The digit also
 appears on the demo board's 7-segment display (decimal point = DONE).
 
@@ -81,7 +81,7 @@ def classify(tt, word):
 
 def run():
     tt = DemoBoard.get()
-    tt.shuttle.tt_um_guanhao3797_mnist.enable()
+    tt.shuttle.tt_um_kenchangh_mnist.enable()
     tt.uio_oe_pico.value = 0        # chip drives uio[5:0]; RP2040 must not
     tt.reset_project(True)
     tt.clock_project_once()

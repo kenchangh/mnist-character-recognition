@@ -1,0 +1,10 @@
+{
+  "float_linear": 0.8262,
+  "int_linear": 0.783,
+  "float_mlp16_relu": 0.8479,
+  "float_mlp16_binact": 0.8158,
+  "int_mlp16": 0.7597,
+  "float_mlp32_relu": 0.867,
+  "float_mlp32_binact": 0.854,
+  "int_mlp32": 0.8028
+}

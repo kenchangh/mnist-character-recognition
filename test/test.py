@@ -23,6 +23,9 @@ DONE_TIMEOUT = 250
 
 DATA, SHIFT_EN, START = 1 << 0, 1 << 1, 1 << 2
 
+# TT demo board 7-segment encodings (uo[0]=a ... uo[6]=g), digits 0-9
+SEG7 = [0x3F, 0x06, 0x5B, 0x4F, 0x66, 0x6D, 0x7D, 0x07, 0x7F, 0x6F]
+
 
 def load_vectors():
     path = os.path.join(os.path.dirname(__file__), f"vectors_{VARIANT}.json")
@@ -67,7 +70,12 @@ async def wait_done(dut):
     for _ in range(DONE_TIMEOUT):
         await ClockCycles(dut.clk, 1)
         if (int(dut.uo_out.value) >> 7) & 1:
-            return int(dut.uio_out.value) & 0xF
+            digit = int(dut.uio_out.value) & 0xF
+            seg = int(dut.uo_out.value) & 0x7F
+            assert seg == SEG7[digit], (
+                f"7-seg shows 0x{seg:02x}, expected 0x{SEG7[digit]:02x} "
+                f"for digit {digit}")
+            return digit
     raise AssertionError("DONE did not assert within timeout")
 
 

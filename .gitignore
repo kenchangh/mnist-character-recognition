@@ -19,3 +19,4 @@ test/sim_build/
 test/results.xml
 test/tb.fst
 weights/mnist_data
+test/gate_level_netlist.v

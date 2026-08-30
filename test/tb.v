@@ -30,7 +30,12 @@ module tb ();
   wire [7:0] uio_oe;
 
 `ifdef GL_TEST
+  wire VPWR = 1'b1;
+  wire VGND = 1'b0;
   tt_um_kenchangh_mnist user_project (
+      // Include power ports for the Gate Level test:
+      .VPWR(VPWR),
+      .VGND(VGND),
 `elsif VARIANT_LINEAR
   tt_um_kenchangh_mnist #(.MLP(0)) user_project (
 `elsif VARIANT_MLP16

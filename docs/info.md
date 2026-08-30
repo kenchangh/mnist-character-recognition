@@ -23,11 +23,14 @@ weights and binary activations) on MNIST images that were average-pooled from
 28×28 to 8×8 and binarized at a fixed threshold (0.15 of full scale).
 Test-set accuracy of the exact integer model (10,000 images):
 
-| Variant | Accuracy | Cell area (yosys, sg13g2) |
-|---------|----------|---------------------------|
-| MLP 64→32→10 (default) | 80.3 % | ~34k µm² |
-| linear 64→10 | 78.3 % | ~20k µm² |
-| MLP 64→16→10 | 76.0 % | ~29k µm² |
+| Variant | Accuracy |
+|---------|----------|
+| MLP 64→32→10 (default, this submission) | 80.3 % |
+| linear 64→10 | 78.3 % |
+| MLP 64→16→10 | 76.0 % |
+
+The default variant hardens to ~31 % utilization of a 2×2 tile
+(sky130A).
 
 Operation is bit-serial and takes about 24 µs per digit at 10 MHz:
 
